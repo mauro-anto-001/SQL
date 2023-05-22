@@ -14,5 +14,12 @@ INSERT INTO boujees VALUES (12, "Water Bottles", 49.99, 50, "Black");
 INSERT INTO boujees VALUES (13, "Fans", 21.99, 50, "Black");
 INSERT INTO boujees VALUES (14, "Computer", 2199.99, 50, "Silver");
 INSERT INTO boujees VALUES (15, "iPhone", 1499.99, 50, "Gold");
-SELECT * FROM boujees ORDER BY price;
-SELECT price, sum(price) FROM boujees
+
+--How does the price range for each item
+SELECT item, price FROM boujees ORDER BY price desc;
+
+--What is the most expensive item?
+SELECT item, max(price) FROM boujees;
+
+--How many item are colored gold?
+SELECT count(color) FROM boujees WHERE color='Gold';
