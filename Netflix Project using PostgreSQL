@@ -16,5 +16,7 @@ join "CharlotteChaze/BreakIntoTech"."netflix_people" as people
 on info.show_id=people.show_id
 where info.title='Bright Star';
 ---What is the oldest movie in the database and what year was it made?
-SELECT release_year FROM "CharlotteChaze/BreakIntoTech"."netflix_titles_info" as info
+SELECT info.title, info.release_year 
+FROM "CharlotteChaze/BreakIntoTech"."netflix_titles_info" as info
+where info.type='Movie' 
 order by release_year limit 1;
