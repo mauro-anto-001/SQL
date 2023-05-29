@@ -11,3 +11,7 @@ SELECT distinct acctnum FROM BIT_DB.customers cust
 JOIN BIT_DB.FebSales Feb
 ON cust.order_id=FEB.orderid
 WHERE length(orderid) = 6 AND orderid <> 'Order ID'
+---Which product was the cheapest one sold in January, and what was the price?
+select distinct price, product from BIT_DB.JanSales jan
+where length(orderID) = 6 and orderid <> 'Order ID'
+order by price asc limit 1;
