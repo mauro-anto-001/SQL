@@ -30,3 +30,8 @@ select product, sum(quantity)*price as revenue, sum(quantity) from BIT_DB.FebSal
 where location = '548 Lincoln St, Seattle, WA 98101'
 and length(orderID) = 6 and orderID <> 'Order ID'
 group by product;
+
+---List all the products sold in Los Angeles in February, and include how many of each were sold
+SELECT Product, SUM(Quantity) FROM BIT_DB.FebSales
+WHERE location like '%Los Angeles%'
+GROUP BY Product;
