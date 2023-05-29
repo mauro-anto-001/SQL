@@ -19,3 +19,8 @@ order by price asc limit 1;
 select sum(quantity)*price as revenue, product from BIT_DB.JanSales jan
 where length(orderID) = 6 and orderID <> 'Order ID'
 group by product
+---Which products were sold in February at 548 Lincoln St, Seattle, WA 98101, how many of each were sold, and what was the total revenue?
+select product, sum(quantity)*price as revenue, sum(quantity) from BIT_DB.FebSales
+where location = '548 Lincoln St, Seattle, WA 98101'
+and length(orderID) = 6 and orderID <> 'Order ID'
+group by product;
