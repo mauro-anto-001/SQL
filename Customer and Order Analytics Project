@@ -15,3 +15,7 @@ WHERE length(orderid) = 6 AND orderid <> 'Order ID'
 select distinct price, product from BIT_DB.JanSales jan
 where length(orderID) = 6 and orderid <> 'Order ID'
 order by price asc limit 1;
+---What is the total revenue for each product sold in January? (Revenue can be calculated using the number of products sold and the price of the products).
+select sum(quantity)*price as revenue, product from BIT_DB.JanSales jan
+where length(orderID) = 6 and orderID <> 'Order ID'
+group by product
